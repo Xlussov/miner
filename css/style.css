@@ -1,0 +1,112 @@
+body{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   background-color:coral;
+}
+table{
+   border-collapse: collapse;
+   border: 1px solid black;
+}
+
+tr, td {
+   border: 1px solid black;
+}
+
+td{
+   width: 25px;
+   height: 25px;
+   background-color: #afafaf;
+   font-family: monospace;
+   font-size: 20px;
+   margin-left: auto;
+   margin-right: auto;
+   position: relative;
+}
+
+
+span{
+   margin-left: 6px;
+}
+
+img{
+   position:absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   width: 18px;
+}
+
+.flag {
+   width: 25px;
+}
+
+.info{
+   display: flex;
+   justify-content: center;
+   margin-bottom: 15px;
+}
+
+.counter{
+   margin-right: 15px;
+
+   font-size: 24px;
+   font-family: cursive;
+   background-color: #f1f1f1;
+   padding: 0px 5px;
+   border: 1px solid black;
+}
+
+.second{
+   margin: 0px;
+}
+
+.minut{
+   margin: 0px;
+}
+
+.flagCounter img{
+   position: relative;
+   left: 15px;
+   width: 30px;
+}
+
+.flagCounter{
+   position: relative;
+   font-family: cursive;
+   background-color: #f1f1f1;
+   border: 1px solid black;
+   font-size: 24px;
+   display: flex;
+   align-items: center;
+   padding: 0px 5px;
+}
+
+select{
+   margin-right: 15px;
+   font-family: cursive;
+   background-color: #f1f1f1;
+   border: 1px solid black;
+   font-size: 24px;
+}
+
+button{
+   margin-right: 15px;
+   font-family: cursive;
+   background-color: #f1f1f1;
+   border: 1px solid black;
+   font-size: 24px;
+}
+
+
+.wrap{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   background-color: whitesmoke;
+   padding: 20px 15px;
+   border-radius: 20px;
+   border: 1px solid rgb(158, 158, 158);
+}
