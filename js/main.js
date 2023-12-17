@@ -504,7 +504,7 @@ class Area {
             if (event.target.classList[0] !== 'container') {
                event.preventDefault();
                if(el.classList.contains('open') !== true && el.classList.contains('flag') !== true && flagCount > 0){
-                  el.innerHTML = `<img class='flag' src="../img/flag.png" alt="flag">`
+                  el.innerHTML = `<img class='flag' src="./img/flag.png" alt="flag">`
                   el.classList.toggle('flag')
                   flagCount--
                }else if(el.classList.contains('flag') === true){
@@ -591,7 +591,7 @@ class Area {
       } else if(el.classList.contains('flag') !== true){
          const mine = document.querySelectorAll('.mine')
          mine.forEach(item =>{
-            item.innerHTML = '<img src="../img/bombe.png" alt="bomb">'
+            item.innerHTML = '<img src="./img/bombe.png" alt="bomb">'
          })
          setTimeout(()=>{
             alert('YOU LOSE');
