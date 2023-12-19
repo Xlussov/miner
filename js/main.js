@@ -484,8 +484,13 @@
 
 //!=================================================================`~~
 let areaConst = [];
-let areaSize = 10;
-let CB = 0.15;
+let areaSize = localStorage.getItem('modeSize') !== null ? parseInt(localStorage.getItem('modeSize')) : 10;
+let CB = localStorage.getItem('modeCB') !== null ? parseFloat(localStorage.getItem('modeCB')) : 0.15;
+console.log(areaSize);
+console.log(CB);
+// let areaSize =  10
+// let CB = 0.15
+
 let game = false;
 let flagCount = 0
 let flagCountConst = 0
@@ -544,7 +549,7 @@ class Area {
       thisElement.forEach(el => {
          el.addEventListener('click', () => {
             if (f === 1) {
-               setInterval(this.updateTimer, interval);
+               const time = setInterval(this.updateTimer, interval);
                const x = el.classList[0].replace(/\D/g, '');
                const y = el.classList[1].replace(/\D/g, '');
                areaConst[y][x] = 9;
@@ -694,27 +699,52 @@ const startGame = (Game) =>{
    })
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
    const Game = new Area(areaConst);
-   const selection = document.querySelector('#levl')
-   selection.addEventListener('change', ()=>{
-      document.querySelector('.container').innerHTML =''
-      areaConst = []
-      if(selection.value === 'light'){
+   const selection = document.querySelector('#levl');
+
+   let selectedValue = localStorage.getItem('selectedValue') || 'light';
+   selection.value = selectedValue;
+
+   selection.addEventListener('change', () => {
+      document.querySelector('.container').innerHTML = '';
+      areaConst = [];
+      flagCount = 0;
+      flagCountConst = 0;
+      seconds = 0;
+
+      selectedValue = selection.value;
+      localStorage.setItem('selectedValue', selectedValue);
+
+      if (selectedValue === 'light') {
          areaSize = 10;
          CB = 0.15;
-      }else if(selection.value === 'medium'){
+         localStorage.setItem('modeSize',areaSize)
+         localStorage.setItem('modeCB',CB)
+         location.reload()
+      } else if (selectedValue === 'medium') {
          areaSize = 15;
          CB = 0.15;
-      }else if(selection.value === 'hard'){
+         localStorage.setItem('modeSize',areaSize)
+         localStorage.setItem('modeCB',CB)
+         location.reload()
+      } else if (selectedValue === 'hard') {
          areaSize = 20;
          CB = 0.2;
-      }else if(selection.value === 'ultraHard'){
+         localStorage.setItem('modeSize',areaSize)
+         localStorage.setItem('modeCB',CB)
+         location.reload()
+      } else if (selectedValue === 'ultraHard') {
          areaSize = 30;
          CB = 0.2;
+         localStorage.setItem('modeSize',areaSize)
+         localStorage.setItem('modeCB',CB)
+         location.reload()
       }
-      startGame(Game)
-   })
-   startGame(Game)
-})
 
+      startGame(Game);
+   });
+
+   startGame(Game);
+});
