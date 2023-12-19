@@ -49,8 +49,10 @@ img{
 }
 
 .counter{
+   display: flex;
+   justify-content: center;
    margin-right: 15px;
-
+   min-width: 53px;
    font-size: 24px;
    font-family: cursive;
    background-color: #f1f1f1;
@@ -73,6 +75,7 @@ img{
 }
 
 .flagCounter{
+   min-width: 50px;
    position: relative;
    font-family: cursive;
    background-color: #f1f1f1;
@@ -109,4 +112,5 @@ button{
    padding: 20px 15px;
    border-radius: 20px;
    border: 1px solid rgb(158, 158, 158);
+   min-width: 400px;
 }

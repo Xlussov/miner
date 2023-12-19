@@ -503,7 +503,7 @@ class Area {
          el.addEventListener('contextmenu', event => {
             if (event.target.classList[0] !== 'container') {
                event.preventDefault();
-               if(el.classList.contains('open') !== true && el.classList.contains('flag') !== true && flagCount > 0){
+               if(el.classList.contains('open') === false && el.classList.contains('flag') === false && flagCount > 0){
                   el.innerHTML = `<img class='flag' src="./img/flag.png" alt="flag">`
                   el.classList.toggle('flag')
                   flagCount--
@@ -668,7 +668,6 @@ class Area {
       const remainingSeconds = seconds % 60;
       document.querySelector('.second').innerHTML = remainingSeconds
       document.querySelector('.minut').innerHTML = minutes
-      console.log(`${minutes}:${remainingSeconds}`);
   }
 }
 
